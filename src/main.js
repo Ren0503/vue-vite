@@ -1,10 +1,12 @@
-import Vue from 'vue';
 import App from './App.vue';
 import store from './store';
 
-Vue.config.productionTip = false;
+import { createApp, h } from 'vue'
 
-new Vue({
-  store,
-  render: h => h(App)
-}).$mount('#app');
+const app = createApp({ 
+    render: ()=>h(App)
+});
+
+app.use(store);
+
+app.mount('#app');
